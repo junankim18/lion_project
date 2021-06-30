@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'agd',
-    'account'
+    'account',
+
+    # 'allauth',  # new
+    # 'allauth.account',  # new
+    # 'allauth.socialaccount',  # new
 ]
 
 MIDDLEWARE = [
@@ -72,8 +75,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-AUTH_USER_MODEL = 'accounts.CustomUser'
+AUTH_USER_MODEL = 'account.CustomUser'
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+)
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
